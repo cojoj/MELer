@@ -22,6 +22,20 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    // Getting path to data.json file with all MEL codes
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+    
+    // Serializing JSON file and loading its content to NSArray
+    NSArray *MELs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                    options:kNilOptions
+                                                      error:nil];
+    
+    // Enumerating NSArray of MELs
+    [MELs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"%@", [obj objectForKey:@"title"]);
+    }];
+    
     return YES;
 }
 							
