@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Chapter.h"
+#import "Section.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

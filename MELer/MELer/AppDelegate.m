@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
 
 @implementation AppDelegate
@@ -18,10 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    // Setting context
+    NSManagedObjectContext *context = [self managedObjectContext];
     
     // Getting path to data.json file with all MEL codes
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
@@ -31,11 +28,41 @@
                                                     options:kNilOptions
                                                       error:nil];
     
-    // Enumerating NSArray of MELs
-    [MELs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSLog(@"%@", [obj objectForKey:@"title"]);
+    // Enumerating NSArray of MELs and saving to the database
+    [MELs enumerateObjectsUsingBlock:^(id chap, NSUInteger idx, BOOL *stop) {
+        Chapter *chapter = [NSEntityDescription insertNewObjectForEntityForName:@"Chapter" inManagedObjectContext:context];
+        
+        // Creating new Chapter object
+        chapter.title   = [chap objectForKey:@"title"];
+        chapter.number  = [chap objectForKey:@"chapter"];
+        chapter.details = [chap objectForKey:@"description"];
+        
+        // Enumerating sections in each chapter and saving them with relationship
+        [[chap objectForKey:@"section"] enumerateObjectsUsingBlock:^(id sec, NSUInteger idx, BOOL *stop) {
+            Section *section = [NSEntityDescription insertNewObjectForEntityForName:@"Section" inManagedObjectContext:context];
+            
+            // Setting section properties
+            section.title   = [sec objectForKey:@"title"];
+            section.number  = [sec objectForKey:@"number"];
+            section.details = [sec objectForKey:@"description"];
+            
+            // Adding section to chapter
+            [chapter addSectionsObject:section];
+        }];
     }];
     
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Chapter"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
+    for (Chapter *info in fetchedObjects) {
+        NSLog(@"title: %@", info.title);
+        for (Section *sec in info.sections) {
+            NSLog(@"\t%@", sec.title);
+        }
+    }
+    NSLog(@"Array size: %lu", (unsigned long)fetchedObjects.count);
     return YES;
 }
 							
