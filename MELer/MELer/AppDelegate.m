@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
 
 @implementation AppDelegate
@@ -18,10 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    // Setting context
+    NSManagedObjectContext *context = [self managedObjectContext];
     
     // Getting path to data.json file with all MEL codes
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
@@ -32,13 +29,27 @@
                                                       error:nil];
     
     // Enumerating NSArray of MELs
-    [MELs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSLog(@"%@", [obj objectForKey:@"title"]);
-        [[obj objectForKey:@"section"] enumerateObjectsUsingBlock:^(id section, NSUInteger idx, BOOL *stop) {
-            NSLog(@"\t\t%@", [section objectForKey:@"title"]);
+    [MELs enumerateObjectsUsingBlock:^(id chap, NSUInteger idx, BOOL *stop) {
+        Chapter *chapter = [NSEntityDescription insertNewObjectForEntityForName:@"Chapter" inManagedObjectContext:context];
+        
+        chapter.title   = [chap objectForKey:@"title"];
+        chapter.number  = [chap objectForKey:@"chapter"];
+        chapter.details = [chap objectForKey:@"description"];
+        
+        [[chap objectForKey:@"section"] enumerateObjectsUsingBlock:^(id sec, NSUInteger idx, BOOL *stop) {
         }];
     }];
     
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Chapter"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
+    for (Chapter *info in fetchedObjects) {
+        NSLog(@"title: %@", info.title);
+        NSLog(@"\tsection: %lu", (unsigned long)info.sections.count);
+    }
+    NSLog(@"Array size: %lu", (unsigned long)fetchedObjects.count);
     return YES;
 }
 							

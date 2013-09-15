@@ -26,6 +26,8 @@
 		701B36AA17E4E260009EBE27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 701B36A817E4E260009EBE27 /* InfoPlist.strings */; };
 		701B36AC17E4E260009EBE27 /* MELerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B36AB17E4E260009EBE27 /* MELerTests.m */; };
 		707C70AB17E4E76500834A88 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 707C70AA17E4E76500834A88 /* data.json */; };
+		70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DC17E5F1C700E4D5B0 /* Section.m */; };
+		70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DF17E5F1C700E4D5B0 /* Chapter.m */; };
 		BF36ED44E78747338F3A16C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C307A8355B045618B95C62D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,10 @@
 		701B36A917E4E260009EBE27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		701B36AB17E4E260009EBE27 /* MELerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MELerTests.m; sourceTree = "<group>"; };
 		707C70AA17E4E76500834A88 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		70A457DB17E5F1C700E4D5B0 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
+		70A457DC17E5F1C700E4D5B0 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
+		70A457DE17E5F1C700E4D5B0 /* Chapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapter.h; sourceTree = "<group>"; };
+		70A457DF17E5F1C700E4D5B0 /* Chapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapter.m; sourceTree = "<group>"; };
 		FA8C249323174A159636B220 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -140,6 +146,7 @@
 				701B369517E4E260009EBE27 /* DetailViewController.m */,
 				701B369717E4E260009EBE27 /* Images.xcassets */,
 				701B368E17E4E260009EBE27 /* MELer.xcdatamodeld */,
+				70A457CE17E5EAD300E4D5B0 /* NSManagedObjects */,
 				707C70AC17E4E77D00834A88 /* JSON data */,
 				701B368017E4E260009EBE27 /* Supporting Files */,
 			);
@@ -181,6 +188,17 @@
 				707C70AA17E4E76500834A88 /* data.json */,
 			);
 			name = "JSON data";
+			sourceTree = "<group>";
+		};
+		70A457CE17E5EAD300E4D5B0 /* NSManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				70A457DE17E5F1C700E4D5B0 /* Chapter.h */,
+				70A457DF17E5F1C700E4D5B0 /* Chapter.m */,
+				70A457DB17E5F1C700E4D5B0 /* Section.h */,
+				70A457DC17E5F1C700E4D5B0 /* Section.m */,
+			);
+			name = NSManagedObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +339,8 @@
 				701B368A17E4E260009EBE27 /* AppDelegate.m in Sources */,
 				701B369017E4E260009EBE27 /* MELer.xcdatamodeld in Sources */,
 				701B368617E4E260009EBE27 /* main.m in Sources */,
+				70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */,
+				70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
