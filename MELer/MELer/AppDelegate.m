@@ -34,6 +34,9 @@
     // Enumerating NSArray of MELs
     [MELs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSLog(@"%@", [obj objectForKey:@"title"]);
+        [[obj objectForKey:@"section"] enumerateObjectsUsingBlock:^(id section, NSUInteger idx, BOOL *stop) {
+            NSLog(@"\t\t%@", [section objectForKey:@"title"]);
+        }];
     }];
     
     return YES;
