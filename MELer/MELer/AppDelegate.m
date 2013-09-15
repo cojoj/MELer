@@ -28,21 +28,25 @@
                                                     options:kNilOptions
                                                       error:nil];
     
-    // Enumerating NSArray of MELs
+    // Enumerating NSArray of MELs and saving to the database
     [MELs enumerateObjectsUsingBlock:^(id chap, NSUInteger idx, BOOL *stop) {
         Chapter *chapter = [NSEntityDescription insertNewObjectForEntityForName:@"Chapter" inManagedObjectContext:context];
         
+        // Creating new Chapter object
         chapter.title   = [chap objectForKey:@"title"];
         chapter.number  = [chap objectForKey:@"chapter"];
         chapter.details = [chap objectForKey:@"description"];
         
+        // Enumerating sections in each chapter and saving them with relationship
         [[chap objectForKey:@"section"] enumerateObjectsUsingBlock:^(id sec, NSUInteger idx, BOOL *stop) {
             Section *section = [NSEntityDescription insertNewObjectForEntityForName:@"Section" inManagedObjectContext:context];
             
+            // Setting section properties
             section.title   = [sec objectForKey:@"title"];
             section.number  = [sec objectForKey:@"number"];
             section.details = [sec objectForKey:@"description"];
             
+            // Adding section to chapter
             [chapter addSectionsObject:section];
         }];
     }];
@@ -54,7 +58,9 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
     for (Chapter *info in fetchedObjects) {
         NSLog(@"title: %@", info.title);
-        NSLog(@"\tsection: %lu", (unsigned long)info.sections.count);
+        for (Section *sec in info.sections) {
+            NSLog(@"\t%@", sec.title);
+        }
     }
     NSLog(@"Array size: %lu", (unsigned long)fetchedObjects.count);
     return YES;
