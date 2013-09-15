@@ -37,6 +37,13 @@
         chapter.details = [chap objectForKey:@"description"];
         
         [[chap objectForKey:@"section"] enumerateObjectsUsingBlock:^(id sec, NSUInteger idx, BOOL *stop) {
+            Section *section = [NSEntityDescription insertNewObjectForEntityForName:@"Section" inManagedObjectContext:context];
+            
+            section.title   = [sec objectForKey:@"title"];
+            section.number  = [sec objectForKey:@"number"];
+            section.details = [sec objectForKey:@"description"];
+            
+            [chapter addSectionsObject:section];
         }];
     }];
     
