@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "Section.h"
+#import "Chapter.h"
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <UIApplicationDelegate>
 
 @end

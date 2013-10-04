@@ -60,18 +60,18 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Chapter"
-                                              inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
-    for (Chapter *info in fetchedObjects) {
-        NSLog(@"title: %@", info.title);
-        for (Section *sec in info.sections) {
-            NSLog(@"\t%@", sec.title);
-        }
-    }
-    NSLog(@"Array size: %lu", (unsigned long)fetchedObjects.count);
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Chapter"
+//                                              inManagedObjectContext:context];
+//    [fetchRequest setEntity:entity];
+//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
+//    for (Chapter *info in fetchedObjects) {
+//        NSLog(@"title: %@", info.title);
+//        for (Section *sec in info.sections) {
+//            NSLog(@"\t%@", sec.title);
+//        }
+//    }
+//    NSLog(@"Array size: %lu", (unsigned long)fetchedObjects.count);
     
     return YES;
 }
