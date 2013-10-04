@@ -18,13 +18,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSArray *MELs = [NSArray arrayWithArray:[self fetchMELEntityWithContext:context]];
+    // Initializing properties with data
+    self.delegate = [[UIApplication sharedApplication]delegate];
+    self.context = [self.delegate managedObjectContext];
+    self.MELs = [NSArray arrayWithArray:[self fetchMELEntityWithContext:self.context]];
     
-    NSLog(@"Size of the array: %i", [MELs count]);
+    NSLog(@"Size of the array: %i", [self.MELs count]);
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
 }
 
 #pragma mark - Test fetch request
