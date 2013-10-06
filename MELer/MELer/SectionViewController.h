@@ -1,8 +1,8 @@
 //
-//  DetailViewController.h
+//  SectionViewController.h
 //  MELer
 //
-//  Created by Mateusz Zając on 14.09.2013.
+//  Created by Mateusz Zając on 06.10.2013.
 //  Copyright (c) 2013 Mateusz Zając. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import "Chapter.h"
 #import "Section.h"
 
-@interface DetailViewController : UIViewController
+@interface SectionViewController : UITableViewController <UITableViewDataSource>
 
 @property (strong, nonatomic) Chapter *chapter;
 
