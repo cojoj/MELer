@@ -1,8 +1,8 @@
 //
-//  MasterViewController.h
+//  ChapterViewController.h
 //  MELer
 //
-//  Created by Mateusz Zając on 14.09.2013.
+//  Created by Mateusz Zając on 06.10.2013.
 //  Copyright (c) 2013 Mateusz Zając. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 #import "Section.h"
 #import "Chapter.h"
 
-@interface MasterViewController : UITableViewController <UIApplicationDelegate, UITableViewDataSource>
+@interface ChapterViewController : UITableViewController <UIApplicationDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) AppDelegate *delegate;
 @property (strong, nonatomic) NSManagedObjectContext *context;

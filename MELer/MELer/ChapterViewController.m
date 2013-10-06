@@ -1,19 +1,28 @@
 //
-//  MasterViewController.m
+//  ChapterViewController.m
 //  MELer
 //
-//  Created by Mateusz Zając on 14.09.2013.
+//  Created by Mateusz Zając on 06.10.2013.
 //  Copyright (c) 2013 Mateusz Zając. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "ChapterViewController.h"
+#import "SectionViewController.h"
 
-@interface MasterViewController ()
+@interface ChapterViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation ChapterViewController
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -24,7 +33,13 @@
     self.context = [self.delegate managedObjectContext];
     self.MELs = [NSArray arrayWithArray:[self fetchMELEntityWithContext:self.context]];
     
-    NSLog(@"Size of the array: %i", [self.MELs count]);
+    NSLog(@"Size of the array: %lu", (unsigned long)[self.MELs count]);
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -36,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.MELs count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,9 +59,21 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    Chapter *chapter = [self.MELs objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = chapter.title;
     
     return cell;
+}
+
+#pragma mark - Prepare for segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    SectionViewController *destinationViewController = segue.destinationViewController;
+    Chapter *chapter = [self.MELs objectAtIndex:indexPath.row];
+    destinationViewController.sectionsArray = [NSArray arrayWithArray:[chapter.sections allObjects]];
 }
 
 #pragma mark - Test fetch request
@@ -63,7 +90,7 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
     
     for (Chapter *chapter in fetchedObjects) {
-        NSLog(@"%@: %@ (%i)", chapter.number, chapter.title, [chapter.sections count]);
+        NSLog(@"%@: %@ (%lu)", chapter.number, chapter.title, (unsigned long)[chapter.sections count]);
     }
     
     return fetchedObjects;

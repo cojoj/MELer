@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MasterViewController.h"
+#import "ChapterViewController.h"
 
 @implementation AppDelegate
 

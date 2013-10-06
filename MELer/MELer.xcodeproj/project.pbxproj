@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700F19C41802092A009128FB /* SectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F19C31802092A009128FB /* SectionViewController.m */; };
+		70143CB81802081400BEBE27 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70143CB71802081400BEBE27 /* ChapterViewController.m */; };
 		701B367817E4E260009EBE27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367717E4E260009EBE27 /* Foundation.framework */; };
 		701B367A17E4E260009EBE27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367917E4E260009EBE27 /* CoreGraphics.framework */; };
 		701B367C17E4E260009EBE27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367B17E4E260009EBE27 /* UIKit.framework */; };
@@ -16,7 +18,6 @@
 		701B368A17E4E260009EBE27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B368917E4E260009EBE27 /* AppDelegate.m */; };
 		701B368D17E4E260009EBE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 701B368B17E4E260009EBE27 /* Main.storyboard */; };
 		701B369017E4E260009EBE27 /* MELer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 701B368E17E4E260009EBE27 /* MELer.xcdatamodeld */; };
-		701B369317E4E260009EBE27 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B369217E4E260009EBE27 /* MasterViewController.m */; };
 		701B369617E4E260009EBE27 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B369517E4E260009EBE27 /* DetailViewController.m */; };
 		701B369817E4E260009EBE27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701B369717E4E260009EBE27 /* Images.xcassets */; };
 		701B369F17E4E260009EBE27 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B369E17E4E260009EBE27 /* XCTest.framework */; };
@@ -43,6 +44,10 @@
 
 /* Begin PBXFileReference section */
 		6C307A8355B045618B95C62D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		700F19C21802092A009128FB /* SectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
+		700F19C31802092A009128FB /* SectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
+		70143CB61802081400BEBE27 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
+		70143CB71802081400BEBE27 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		701B367417E4E260009EBE27 /* MELer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MELer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701B367717E4E260009EBE27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		701B367917E4E260009EBE27 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,8 +61,6 @@
 		701B368917E4E260009EBE27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		701B368C17E4E260009EBE27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		701B368F17E4E260009EBE27 /* MELer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MELer.xcdatamodel; sourceTree = "<group>"; };
-		701B369117E4E260009EBE27 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		701B369217E4E260009EBE27 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		701B369417E4E260009EBE27 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		701B369517E4E260009EBE27 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		701B369717E4E260009EBE27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -140,8 +143,10 @@
 				701B368817E4E260009EBE27 /* AppDelegate.h */,
 				701B368917E4E260009EBE27 /* AppDelegate.m */,
 				701B368B17E4E260009EBE27 /* Main.storyboard */,
-				701B369117E4E260009EBE27 /* MasterViewController.h */,
-				701B369217E4E260009EBE27 /* MasterViewController.m */,
+				70143CB61802081400BEBE27 /* ChapterViewController.h */,
+				70143CB71802081400BEBE27 /* ChapterViewController.m */,
+				700F19C21802092A009128FB /* SectionViewController.h */,
+				700F19C31802092A009128FB /* SectionViewController.m */,
 				701B369417E4E260009EBE27 /* DetailViewController.h */,
 				701B369517E4E260009EBE27 /* DetailViewController.m */,
 				701B369717E4E260009EBE27 /* Images.xcassets */,
@@ -334,12 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70143CB81802081400BEBE27 /* ChapterViewController.m in Sources */,
 				701B369617E4E260009EBE27 /* DetailViewController.m in Sources */,
-				701B369317E4E260009EBE27 /* MasterViewController.m in Sources */,
 				701B368A17E4E260009EBE27 /* AppDelegate.m in Sources */,
 				701B369017E4E260009EBE27 /* MELer.xcdatamodeld in Sources */,
 				701B368617E4E260009EBE27 /* main.m in Sources */,
 				70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */,
+				700F19C41802092A009128FB /* SectionViewController.m in Sources */,
 				70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
