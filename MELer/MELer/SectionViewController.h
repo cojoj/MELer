@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Chapter.h"
+#import "Section.h"
 
-@interface SectionViewController : UITableViewController
+@interface SectionViewController : UITableViewController <UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *sectionsArray;
+@property (strong, nonatomic) Chapter *chapter;
 
 @end

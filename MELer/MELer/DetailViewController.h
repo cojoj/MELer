@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Chapter.h"
+#import "Section.h"
 
 @interface DetailViewController : UIViewController
+
+@property (strong, nonatomic) Chapter *chapter;
 
 @end

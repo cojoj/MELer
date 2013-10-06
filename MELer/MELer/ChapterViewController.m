@@ -8,6 +8,7 @@
 
 #import "ChapterViewController.h"
 #import "SectionViewController.h"
+#import "DetailViewController.h"
 
 @interface ChapterViewController ()
 
@@ -72,8 +73,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     SectionViewController *destinationViewController = segue.destinationViewController;
-    Chapter *chapter = [self.MELs objectAtIndex:indexPath.row];
-    destinationViewController.sectionsArray = [NSArray arrayWithArray:[chapter.sections allObjects]];
+    destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
 }
 
 #pragma mark - Test fetch request

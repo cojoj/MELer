@@ -46,7 +46,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="B7r-eg-Otl" kind="push" identifier="showSection" trigger="accessoryAction" id="LKt-cQ-YyT"/>
+                                    <segue destination="4hR-gT-gV1" kind="push" id="ZHX-O4-qmW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -63,45 +63,33 @@
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
         <!--Section View Controller-->
-        <scene sceneID="C0k-AC-put">
+        <scene sceneID="o0N-4r-k0v">
             <objects>
-                <tableViewController id="B7r-eg-Otl" customClass="SectionViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rpr-Qm-MSm">
+                <tableViewController id="4hR-gT-gV1" customClass="SectionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z63-AO-hmG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vop-hY-w2G" style="IBUITableViewCellStyleDefault" id="EbB-tv-2Sy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="M1U-tm-bM5">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EbB-tv-2Sy" id="yIm-6p-rSl">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M1U-tm-bM5" id="zos-QP-3Nd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vop-hY-w2G">
-                                            <rect key="frame" x="15" y="0.0" width="238" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" trigger="accessoryAction" id="I34-gn-5mz"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="B7r-eg-Otl" id="aDv-LR-KWg"/>
-                            <outlet property="delegate" destination="B7r-eg-Otl" id="Igw-jk-w1n"/>
+                            <outlet property="dataSource" destination="4hR-gT-gV1" id="7xr-mZ-CsA"/>
+                            <outlet property="delegate" destination="4hR-gT-gV1" id="Bzx-lN-NbR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1cO-PM-Qdw"/>
+                    <navigationItem key="navigationItem" id="PHs-qC-7nr"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gYi-6n-3JN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwy-NA-cRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="64"/>
+            <point key="canvasLocation" x="931" y="64"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
