@@ -67,13 +67,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    //[self performSegueWithIdentifier:@"showDetail" sender:[tableView cellForRowAtIndexPath:indexPath]];
+}
+
 #pragma mark - Prepare for segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    SectionViewController *destinationViewController = segue.destinationViewController;
-    destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
+    if (![[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SectionViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
+    }
 }
 
 #pragma mark - Test fetch request

@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     NSLog(@"%i", [self.chapter.sections count]);
+    self.sectionsArray = [NSArray arrayWithArray:[self.chapter.sections allObjects]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.chapter.sections count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,6 +59,9 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    Section *section = [self.sectionsArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = section.title;
     
     return cell;
 }
