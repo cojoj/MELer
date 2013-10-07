@@ -62,7 +62,9 @@
     
     Chapter *chapter = [self.MELs objectAtIndex:indexPath.row];
     
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Number: %@ \t Sections: %lu", chapter.number, (unsigned long)[chapter.sections count]];
     cell.textLabel.text = chapter.title;
+
     
     return cell;
 }
