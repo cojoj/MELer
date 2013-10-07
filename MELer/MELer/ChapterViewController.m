@@ -66,23 +66,32 @@
     cell.textLabel.text = chapter.title;
 
     
+    if ([chapter.sections count] != 0) {
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+    } else {
+        if ([chapter.details isEqualToString:@""]) {
+            [cell setUserInteractionEnabled:NO];
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        } else {
+            // Need something to deactivate cell but leave detail button active
+            [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
+        }
+    }
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    //[self performSegueWithIdentifier:@"showDetail" sender:[tableView cellForRowAtIndexPath:indexPath]];
 }
 
 #pragma mark - Prepare for segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (![[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        SectionViewController *destinationViewController = segue.destinationViewController;
-        destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
-    }
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    SectionViewController *destinationViewController = segue.destinationViewController;
+    destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
 }
 
 #pragma mark - Test fetch request
