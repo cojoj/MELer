@@ -34,6 +34,7 @@
         
         // Enumerating NSArray of MELs and saving to the database
         [MELs enumerateObjectsUsingBlock:^(id chap, NSUInteger idx, BOOL *stop) {
+            NSLog(@"start");
             Chapter *chapter = [NSEntityDescription insertNewObjectForEntityForName:@"Chapter" inManagedObjectContext:context];
             
             // Creating new Chapter object
@@ -52,6 +53,7 @@
                 
                 // Adding section to chapter
                 [chapter addSectionsObject:section];
+                NSLog(@"stop");
             }];
         }];
     } else {
@@ -59,19 +61,6 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasBeenLaunched"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Chapter"
-//                                              inManagedObjectContext:context];
-//    [fetchRequest setEntity:entity];
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
-//    for (Chapter *info in fetchedObjects) {
-//        NSLog(@"title: %@", info.title);
-//        for (Section *sec in info.sections) {
-//            NSLog(@"\t%@", sec.title);
-//        }
-//    }
-//    NSLog(@"Array size: %lu", (unsigned long)fetchedObjects.count);
     
     return YES;
 }

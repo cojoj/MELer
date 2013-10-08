@@ -20,7 +20,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -32,8 +32,9 @@
     // Initializing properties with data
     self.delegate = [[UIApplication sharedApplication]delegate];
     self.context = [self.delegate managedObjectContext];
+
     self.MELs = [NSArray arrayWithArray:[self fetchMELEntityWithContext:self.context]];
-    
+
     NSLog(@"Size of the array: %lu", (unsigned long)[self.MELs count]);
 }
 
@@ -64,25 +65,8 @@
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Number: %@ \t Sections: %lu", chapter.number, (unsigned long)[chapter.sections count]];
     cell.textLabel.text = chapter.title;
-
-    
-    if ([chapter.sections count] != 0) {
-        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-    } else {
-        if ([chapter.details isEqualToString:@""]) {
-            [cell setUserInteractionEnabled:NO];
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
-        } else {
-            // Need something to deactivate cell but leave detail button active
-            [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
-        }
-    }
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
 }
 
 #pragma mark - Prepare for segue
@@ -108,7 +92,7 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
     
     for (Chapter *chapter in fetchedObjects) {
-        NSLog(@"%@: %@ (%lu)", chapter.number, chapter.title, (unsigned long)[chapter.sections count]);
+        // NSLog(@"%@: %@ (%lu)", chapter.number, chapter.title, (unsigned long)[chapter.sections count]);
     }
     
     return fetchedObjects;
