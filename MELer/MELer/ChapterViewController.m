@@ -7,6 +7,7 @@
 //
 
 #import "ChapterViewController.h"
+#import "SectionViewController.h"
 
 @interface ChapterViewController ()
 
@@ -50,9 +51,21 @@
     return cell;
 }
 
-#pragma mark - Test fetch request
+#pragma mark - Segueing
 
-// Test fetch for developing purposes
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Preparing for segue and passing selected row object to destination view controller
+    if ([[segue identifier] isEqualToString:@"showSectionSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SectionViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
+    }
+}
+
+#pragma mark - Fetch request
+
+// Method for fetching data from databse
 - (NSArray *)fetchMELEntityWithContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
