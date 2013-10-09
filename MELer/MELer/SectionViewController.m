@@ -19,6 +19,8 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        // NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
+        // self.sectionsArray = [[self.chapter.sections allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
     }
     return self;
 }
@@ -26,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
+    self.sectionsArray = [NSArray arrayWithArray:[[self.chapter.sections allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -58,10 +62,10 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Section *section = [[self.chapter.sections allObjects] objectAtIndex:indexPath.row];
+    Section *section = [self.sectionsArray objectAtIndex:indexPath.row];
     
     cell.textLabel.text = section.title;
-    cell.detailTextLabel.text = section.number;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Number: %@", section.number];
     
     return cell;
 }
