@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		700F19C41802092A009128FB /* SectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F19C31802092A009128FB /* SectionViewController.m */; };
 		70143CB81802081400BEBE27 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70143CB71802081400BEBE27 /* ChapterViewController.m */; };
 		701B367817E4E260009EBE27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367717E4E260009EBE27 /* Foundation.framework */; };
 		701B367A17E4E260009EBE27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367917E4E260009EBE27 /* CoreGraphics.framework */; };
@@ -18,7 +17,6 @@
 		701B368A17E4E260009EBE27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B368917E4E260009EBE27 /* AppDelegate.m */; };
 		701B368D17E4E260009EBE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 701B368B17E4E260009EBE27 /* Main.storyboard */; };
 		701B369017E4E260009EBE27 /* MELer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 701B368E17E4E260009EBE27 /* MELer.xcdatamodeld */; };
-		701B369617E4E260009EBE27 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B369517E4E260009EBE27 /* DetailViewController.m */; };
 		701B369817E4E260009EBE27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701B369717E4E260009EBE27 /* Images.xcassets */; };
 		701B369F17E4E260009EBE27 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B369E17E4E260009EBE27 /* XCTest.framework */; };
 		701B36A017E4E260009EBE27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367717E4E260009EBE27 /* Foundation.framework */; };
@@ -26,7 +24,7 @@
 		701B36A217E4E260009EBE27 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701B367D17E4E260009EBE27 /* CoreData.framework */; };
 		701B36AA17E4E260009EBE27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 701B36A817E4E260009EBE27 /* InfoPlist.strings */; };
 		701B36AC17E4E260009EBE27 /* MELerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B36AB17E4E260009EBE27 /* MELerTests.m */; };
-		707C70AB17E4E76500834A88 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 707C70AA17E4E76500834A88 /* data.json */; };
+		7025992818058AA7001DA8AF /* MELer_DB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7025992718058AA7001DA8AF /* MELer_DB.sqlite */; };
 		70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DC17E5F1C700E4D5B0 /* Section.m */; };
 		70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DF17E5F1C700E4D5B0 /* Chapter.m */; };
 		BF36ED44E78747338F3A16C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C307A8355B045618B95C62D /* libPods.a */; };
@@ -44,8 +42,6 @@
 
 /* Begin PBXFileReference section */
 		6C307A8355B045618B95C62D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		700F19C21802092A009128FB /* SectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
-		700F19C31802092A009128FB /* SectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
 		70143CB61802081400BEBE27 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
 		70143CB71802081400BEBE27 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		701B367417E4E260009EBE27 /* MELer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MELer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,15 +57,13 @@
 		701B368917E4E260009EBE27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		701B368C17E4E260009EBE27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		701B368F17E4E260009EBE27 /* MELer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MELer.xcdatamodel; sourceTree = "<group>"; };
-		701B369417E4E260009EBE27 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		701B369517E4E260009EBE27 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		701B369717E4E260009EBE27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		701B369D17E4E260009EBE27 /* MELerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MELerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		701B369E17E4E260009EBE27 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		701B36A717E4E260009EBE27 /* MELerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MELerTests-Info.plist"; sourceTree = "<group>"; };
 		701B36A917E4E260009EBE27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		701B36AB17E4E260009EBE27 /* MELerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MELerTests.m; sourceTree = "<group>"; };
-		707C70AA17E4E76500834A88 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		7025992718058AA7001DA8AF /* MELer_DB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MELer_DB.sqlite; sourceTree = "<group>"; };
 		70A457DB17E5F1C700E4D5B0 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		70A457DC17E5F1C700E4D5B0 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		70A457DE17E5F1C700E4D5B0 /* Chapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapter.h; sourceTree = "<group>"; };
@@ -145,14 +139,9 @@
 				701B368B17E4E260009EBE27 /* Main.storyboard */,
 				70143CB61802081400BEBE27 /* ChapterViewController.h */,
 				70143CB71802081400BEBE27 /* ChapterViewController.m */,
-				700F19C21802092A009128FB /* SectionViewController.h */,
-				700F19C31802092A009128FB /* SectionViewController.m */,
-				701B369417E4E260009EBE27 /* DetailViewController.h */,
-				701B369517E4E260009EBE27 /* DetailViewController.m */,
 				701B369717E4E260009EBE27 /* Images.xcassets */,
 				701B368E17E4E260009EBE27 /* MELer.xcdatamodeld */,
 				70A457CE17E5EAD300E4D5B0 /* NSManagedObjects */,
-				707C70AC17E4E77D00834A88 /* JSON data */,
 				701B368017E4E260009EBE27 /* Supporting Files */,
 			);
 			path = MELer;
@@ -161,6 +150,7 @@
 		701B368017E4E260009EBE27 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7025992718058AA7001DA8AF /* MELer_DB.sqlite */,
 				701B368117E4E260009EBE27 /* MELer-Info.plist */,
 				701B368217E4E260009EBE27 /* InfoPlist.strings */,
 				701B368517E4E260009EBE27 /* main.m */,
@@ -185,14 +175,6 @@
 				701B36A817E4E260009EBE27 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		707C70AC17E4E77D00834A88 /* JSON data */ = {
-			isa = PBXGroup;
-			children = (
-				707C70AA17E4E76500834A88 /* data.json */,
-			);
-			name = "JSON data";
 			sourceTree = "<group>";
 		};
 		70A457CE17E5EAD300E4D5B0 /* NSManagedObjects */ = {
@@ -286,8 +268,8 @@
 			files = (
 				701B369817E4E260009EBE27 /* Images.xcassets in Resources */,
 				701B368417E4E260009EBE27 /* InfoPlist.strings in Resources */,
+				7025992818058AA7001DA8AF /* MELer_DB.sqlite in Resources */,
 				701B368D17E4E260009EBE27 /* Main.storyboard in Resources */,
-				707C70AB17E4E76500834A88 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,12 +322,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70143CB81802081400BEBE27 /* ChapterViewController.m in Sources */,
-				701B369617E4E260009EBE27 /* DetailViewController.m in Sources */,
 				701B368A17E4E260009EBE27 /* AppDelegate.m in Sources */,
 				701B369017E4E260009EBE27 /* MELer.xcdatamodeld in Sources */,
 				701B368617E4E260009EBE27 /* main.m in Sources */,
 				70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */,
-				700F19C41802092A009128FB /* SectionViewController.m in Sources */,
 				70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

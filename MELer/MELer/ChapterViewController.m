@@ -7,8 +7,6 @@
 //
 
 #import "ChapterViewController.h"
-#import "SectionViewController.h"
-#import "DetailViewController.h"
 
 @interface ChapterViewController ()
 
@@ -16,32 +14,15 @@
 
 @implementation ChapterViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Initializing properties with data
     self.delegate = [[UIApplication sharedApplication]delegate];
     self.context = [self.delegate managedObjectContext];
-
     self.MELs = [NSArray arrayWithArray:[self fetchMELEntityWithContext:self.context]];
 
     NSLog(@"Size of the array: %lu", (unsigned long)[self.MELs count]);
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -61,21 +42,12 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    // Initializing Cell and filling it with info
     Chapter *chapter = [self.MELs objectAtIndex:indexPath.row];
-    
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Number: %@ \t Sections: %lu", chapter.number, (unsigned long)[chapter.sections count]];
     cell.textLabel.text = chapter.title;
     
     return cell;
-}
-
-#pragma mark - Prepare for segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    SectionViewController *destinationViewController = segue.destinationViewController;
-    destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
 }
 
 #pragma mark - Test fetch request
@@ -92,7 +64,7 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
     
     for (Chapter *chapter in fetchedObjects) {
-        // NSLog(@"%@: %@ (%lu)", chapter.number, chapter.title, (unsigned long)[chapter.sections count]);
+        NSLog(@"%@: %@ (%lu)", chapter.number, chapter.title, (unsigned long)[chapter.sections count]);
     }
     
     return fetchedObjects;

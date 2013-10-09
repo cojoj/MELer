@@ -17,51 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Setting context
-    NSManagedObjectContext *context = [self managedObjectContext];
-    
-    // Checking wheather app has been launched before or if this is the first run
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"HasBeenLaunched"]) {
-        // Creating database from JSON at the first run
-        
-        // Getting path to data.json file with all MEL codes
-        NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
-        
-        // Serializing JSON file and loading its content to NSArray
-        NSArray *MELs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
-                                                        options:kNilOptions
-                                                          error:nil];
-        
-        // Enumerating NSArray of MELs and saving to the database
-        [MELs enumerateObjectsUsingBlock:^(id chap, NSUInteger idx, BOOL *stop) {
-            NSLog(@"start");
-            Chapter *chapter = [NSEntityDescription insertNewObjectForEntityForName:@"Chapter" inManagedObjectContext:context];
-            
-            // Creating new Chapter object
-            chapter.title   = [chap objectForKey:@"title"];
-            chapter.number  = [chap objectForKey:@"chapter"];
-            chapter.details = [chap objectForKey:@"description"];
-            
-            // Enumerating sections in each chapter and saving them with relationship
-            [[chap objectForKey:@"section"] enumerateObjectsUsingBlock:^(id sec, NSUInteger idx, BOOL *stop) {
-                Section *section = [NSEntityDescription insertNewObjectForEntityForName:@"Section" inManagedObjectContext:context];
-                
-                // Setting section properties
-                section.title   = [sec objectForKey:@"title"];
-                section.number  = [sec objectForKey:@"number"];
-                section.details = [sec objectForKey:@"description"];
-                
-                // Adding section to chapter
-                [chapter addSectionsObject:section];
-                NSLog(@"stop");
-            }];
-        }];
-    } else {
-        // Seeting the bool value for key HasAlreadyBeenLaunched and synchronising user defaults
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasBeenLaunched"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
     return YES;
 }
 							
@@ -146,6 +101,16 @@
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"MELer.sqlite"];
+    
+    // Checking wheather db already exists and copy preloaded one if not
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"MELer_DB" ofType:@"sqlite"]];
+        NSError* err = nil;
+        
+        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
+            NSLog(@"Oops, could copy preloaded data");
+        }
+    }
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
