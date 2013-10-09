@@ -13,5 +13,6 @@
 @interface SectionViewController : UITableViewController
 
 @property (strong, nonatomic)Chapter *chapter;
+@property (strong, nonatomic)NSArray *sections;
 
 @end

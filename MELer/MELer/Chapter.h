@@ -16,14 +16,14 @@
 @property (nonatomic, retain) NSString * number;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * details;
-@property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, retain) NSSet *sections;
 @end
 
 @interface Chapter (CoreDataGeneratedAccessors)
 
 - (void)addSectionsObject:(Section *)value;
 - (void)removeSectionsObject:(Section *)value;
-- (void)addSections:(NSArray *)values;
-- (void)removeSections:(NSArray *)values;
+- (void)addSections:(NSSet *)values;
+- (void)removeSections:(NSSet *)values;
 
 @end
