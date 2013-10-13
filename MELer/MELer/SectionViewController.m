@@ -22,6 +22,9 @@
     // Sorting array of sections in ascending order
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
     self.sectionsArray = [NSArray arrayWithArray:[[self.chapter.sections allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]]];
+    
+    // Setting title
+    [self.navigationItem setTitle:self.chapter.title];
 }
 
 - (void)didReceiveMemoryWarning

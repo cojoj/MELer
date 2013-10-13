@@ -27,7 +27,8 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"chap: %@, sec: %@", self.chapter.title, self.section.title);
+    [self.navigationItem setTitle:self.section.title];
+    // NSLog(@"chap: %@, sec: %@", self.chapter.title, self.section.title);
 }
 
 - (void)didReceiveMemoryWarning
