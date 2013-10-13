@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) Chapter *chapter;
 @property (strong, nonatomic) Section *section;
+@property (strong, nonatomic) IBOutlet UITextView *detailTextView;
 
 @end

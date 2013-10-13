@@ -27,7 +27,9 @@
 {
     [super viewDidLoad];
     
+    // Setting title
     [self.navigationItem setTitle:self.section.title];
+    [self.detailTextView setContentInset:UIEdgeInsetsMake(-7.0,0.0,0,0.0)];
     // NSLog(@"chap: %@, sec: %@", self.chapter.title, self.section.title);
 }
 
@@ -35,6 +37,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private methods
+
+- (NSString *)displayProperDescriptionBasedOn:(NSString *)description
+{
+    NSString *properDescription = description;
+    
+    if ([description isEqualToString:@""]) {
+        properDescription = @"No description for this section";
+    }
+    
+    return properDescription;
 }
 
 @end

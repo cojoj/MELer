@@ -112,8 +112,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="nM4-0i-YsL"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="G52-Bk-eiZ" id="V1g-L5-sfo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqk-55-QwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="G52-Bk-eiZ">
+                    <connections>
+                        <outlet property="delegate" destination="4e1-SS-fui" id="iFT-fG-VB7"/>
+                        <outlet property="searchContentsController" destination="4e1-SS-fui" id="jel-7F-2Am"/>
+                        <outlet property="searchResultsDataSource" destination="4e1-SS-fui" id="ksd-lt-TIZ"/>
+                        <outlet property="searchResultsDelegate" destination="4e1-SS-fui" id="2tK-qw-uk7"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="957" y="64"/>
         </scene>
@@ -122,19 +133,32 @@
             <objects>
                 <viewController id="6yJ-jZ-szn" customClass="SectionDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QMd-Tq-2eu"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZxE-uL-oQB"/>
+                        <viewControllerLayoutGuide type="top" id="Y8R-kP-izT"/>
+                        <viewControllerLayoutGuide type="bottom" id="uK7-1i-7JB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ODs-6w-EA8">
+                    <view key="view" contentMode="scaleToFill" id="Y3G-jH-476">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb4-8B-YJu">
+                                <rect key="frame" x="20" y="90" width="280" height="154"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="TcD-vk-uZL"/>
+                    <connections>
+                        <outlet property="detailTextView" destination="Qb4-8B-YJu" id="5Oa-rQ-9cq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvc-il-Tsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="64"/>
+            <point key="canvasLocation" x="1458" y="64"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
