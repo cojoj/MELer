@@ -78,11 +78,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="CCm-h5-0UJ" detailTextLabel="Tbh-de-mTg" style="IBUITableViewCellStyleSubtitle" id="hjY-pk-8b6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="CCm-h5-0UJ" detailTextLabel="Tbh-de-mTg" style="IBUITableViewCellStyleSubtitle" id="hjY-pk-8b6">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjY-pk-8b6" id="mPj-oF-0Hs">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CCm-h5-0UJ">
@@ -101,6 +101,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6yJ-jZ-szn" kind="push" identifier="sectionDetailsSegue" id="rx3-uD-i5I"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -113,6 +116,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqk-55-QwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="957" y="64"/>
+        </scene>
+        <!--Section Detail View Controller-->
+        <scene sceneID="tbi-Lt-vFy">
+            <objects>
+                <viewController id="6yJ-jZ-szn" customClass="SectionDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QMd-Tq-2eu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZxE-uL-oQB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ODs-6w-EA8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TcD-vk-uZL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uvc-il-Tsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1453" y="64"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
