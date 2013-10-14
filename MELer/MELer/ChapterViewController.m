@@ -49,6 +49,12 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Number: %@ \t Sections: %lu", chapter.number, (unsigned long)[chapter.sections count]];
     cell.textLabel.text = [chapter.title capitalizedString];
     
+    if ([chapter.sections count] == 0) {
+        [cell.detailTextLabel setTextColor:[UIColor redColor]];
+    } else {
+        [cell.detailTextLabel setTextColor:[UIColor blackColor]];
+    }
+    
     return cell;
 }
 

@@ -28,7 +28,6 @@
     [super viewDidLoad];
     
     // Setting title
-    // [self.navigationItem setTitle:self.section.title];
     [self.sectionTitleTextField setText:[self.section.title capitalizedString]];
     // Setting details
     [self.detailTextView setText:[self displayProperDescriptionBasedOn:self.section.details]];
