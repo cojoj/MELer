@@ -63,13 +63,13 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MELer" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Chapters" id="tQt-TN-PWz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Section View Controller-->
+        <!--Section View Controller - Sections-->
         <scene sceneID="FKj-ms-RB3">
             <objects>
                 <tableViewController id="4e1-SS-fui" customClass="SectionViewController" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                             <outlet property="delegate" destination="4e1-SS-fui" id="tOj-Ne-Hv3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nM4-0i-YsL"/>
+                    <navigationItem key="navigationItem" title="Sections" id="nM4-0i-YsL"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="G52-Bk-eiZ" id="V1g-L5-sfo"/>
                     </connections>
@@ -128,7 +128,7 @@
             </objects>
             <point key="canvasLocation" x="957" y="64"/>
         </scene>
-        <!--Section Detail View Controller-->
+        <!--Section Detail View Controller - Details-->
         <scene sceneID="tbi-Lt-vFy">
             <objects>
                 <viewController id="6yJ-jZ-szn" customClass="SectionDetailViewController" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TcD-vk-uZL"/>
+                    <navigationItem key="navigationItem" title="Details" id="TcD-vk-uZL"/>
                     <connections>
                         <outlet property="detailTextView" destination="CLy-il-xub" id="1um-Wd-wxZ"/>
                         <outlet property="sectionTitleTextField" destination="oD6-aV-OjA" id="kgd-Vr-b71"/>
