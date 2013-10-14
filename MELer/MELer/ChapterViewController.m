@@ -62,10 +62,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
     // Preparing for segue and passing selected row object to destination view controller
     if ([[segue identifier] isEqualToString:@"showSectionSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SectionViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.chapter = [self.MELs objectAtIndex:indexPath.row];
     }

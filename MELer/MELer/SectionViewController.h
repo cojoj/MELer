@@ -14,6 +14,5 @@
 
 @property (strong, nonatomic)Chapter *chapter;
 @property (strong, nonatomic)NSArray *sectionsArray;
-@property (strong, nonatomic) IBOutlet UITextView *chapterDetailTextView;
 
 @end
