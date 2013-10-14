@@ -55,7 +55,7 @@
     // Creating an instance and setting cell labels
     Section *section = [self.sectionsArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = section.title;
+    cell.textLabel.text = [section.title capitalizedString];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Number: %@", section.number];
     
     return cell;
