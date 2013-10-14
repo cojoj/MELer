@@ -28,9 +28,12 @@
     [super viewDidLoad];
     
     // Setting title
-    [self.navigationItem setTitle:self.section.title];
-    [self.detailTextView setContentInset:UIEdgeInsetsMake(-7.0,0.0,0,0.0)];
-    // NSLog(@"chap: %@, sec: %@", self.chapter.title, self.section.title);
+    // [self.navigationItem setTitle:self.section.title];
+    [self.sectionTitleTextField setText:[self.section.title capitalizedString]];
+    // Setting details
+    [self.detailTextView setText:[self displayProperDescriptionBasedOn:self.section.details]];
+    // Settig details to alignto the top of the Text View
+    [self.detailTextView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +44,7 @@
 
 #pragma mark - Private methods
 
+// Method for generating and returning proper NSString based on content of details
 - (NSString *)displayProperDescriptionBasedOn:(NSString *)description
 {
     NSString *properDescription = description;
