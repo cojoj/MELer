@@ -27,12 +27,13 @@
 {
     [super viewDidLoad];
     
-    // Setting title
+    // Setting titles
+    [self.chapterTitleTextField setText:self.chapter.title];
     [self.sectionTitleTextField setText:[self.section.title capitalizedString]];
     // Setting details
     [self.detailTextView setText:[self displayProperDescriptionBasedOn:self.section.details]];
-    // Settig details to alignto the top of the Text View
-    [self.detailTextView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.detailTextView sizeToFit];
+    [self.detailTextView layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning

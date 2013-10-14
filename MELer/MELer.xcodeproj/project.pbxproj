@@ -25,6 +25,7 @@
 		701B36AA17E4E260009EBE27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 701B36A817E4E260009EBE27 /* InfoPlist.strings */; };
 		701B36AC17E4E260009EBE27 /* MELerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B36AB17E4E260009EBE27 /* MELerTests.m */; };
 		7025992818058AA7001DA8AF /* MELer_DB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7025992718058AA7001DA8AF /* MELer_DB.sqlite */; };
+		70399760180CAC9C0049CC13 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 7039975F180CAC9C0049CC13 /* icon-retina.png */; };
 		70876FB3180B3D6D005B290D /* SectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70876FB2180B3D6D005B290D /* SectionDetailViewController.m */; };
 		70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DC17E5F1C700E4D5B0 /* Section.m */; };
 		70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DF17E5F1C700E4D5B0 /* Chapter.m */; };
@@ -66,6 +67,7 @@
 		701B36A917E4E260009EBE27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		701B36AB17E4E260009EBE27 /* MELerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MELerTests.m; sourceTree = "<group>"; };
 		7025992718058AA7001DA8AF /* MELer_DB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MELer_DB.sqlite; sourceTree = "<group>"; };
+		7039975F180CAC9C0049CC13 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "MELer/icon-retina.png"; sourceTree = "<group>"; };
 		70876FB1180B3D6D005B290D /* SectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionDetailViewController.h; sourceTree = "<group>"; };
 		70876FB2180B3D6D005B290D /* SectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionDetailViewController.m; sourceTree = "<group>"; };
 		70A457DB17E5F1C700E4D5B0 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		701B366B17E4E260009EBE27 = {
 			isa = PBXGroup;
 			children = (
+				7039975F180CAC9C0049CC13 /* icon-retina.png */,
 				701B367F17E4E260009EBE27 /* MELer */,
 				701B36A517E4E260009EBE27 /* MELerTests */,
 				701B367617E4E260009EBE27 /* Frameworks */,
@@ -278,6 +281,7 @@
 			files = (
 				701B369817E4E260009EBE27 /* Images.xcassets in Resources */,
 				701B368417E4E260009EBE27 /* InfoPlist.strings in Resources */,
+				70399760180CAC9C0049CC13 /* icon-retina.png in Resources */,
 				7025992818058AA7001DA8AF /* MELer_DB.sqlite in Resources */,
 				701B368D17E4E260009EBE27 /* Main.storyboard in Resources */,
 			);
@@ -464,7 +468,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA8C249323174A159636B220 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MELer/MELer-Prefix.pch";
@@ -479,7 +482,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA8C249323174A159636B220 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MELer/MELer-Prefix.pch";

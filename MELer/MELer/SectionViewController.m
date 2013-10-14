@@ -22,6 +22,11 @@
     // Sorting array of sections in ascending order
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
     self.sectionsArray = [NSArray arrayWithArray:[[self.chapter.sections allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]]];
+    
+    // Setting details and fitting its content
+    [self.chapterDetailsTextView setText:[self displayProperDescriptionBasedOn:self.chapter.details]];
+    [self.chapterDetailsTextView sizeToFit];
+    [self.chapterDetailsTextView layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +74,20 @@
         destinationViewController.chapter = self.chapter;
         destinationViewController.section = [self.sectionsArray objectAtIndex:indexPath.row];
     }
+}
+
+#pragma mark - Private methods
+
+// Method for generating and returning proper NSString based on content of details
+- (NSString *)displayProperDescriptionBasedOn:(NSString *)description
+{
+    NSString *properDescription = description;
+    
+    if ([description isEqualToString:@""]) {
+        properDescription = @"No description for this chapter";
+    }
+    
+    return properDescription;
 }
 
 @end

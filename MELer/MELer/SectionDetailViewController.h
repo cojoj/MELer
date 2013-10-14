@@ -16,5 +16,6 @@
 @property (strong, nonatomic) Section *section;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
 @property (strong, nonatomic) IBOutlet UITextField *sectionTitleTextField;
+@property (strong, nonatomic) IBOutlet UITextField *chapterTitleTextField;
 
 @end
