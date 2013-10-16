@@ -30,7 +30,6 @@
 		70A457DD17E5F1C700E4D5B0 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DC17E5F1C700E4D5B0 /* Section.m */; };
 		70A457E017E5F1C700E4D5B0 /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A457DF17E5F1C700E4D5B0 /* Chapter.m */; };
 		70D36B2C1805CCB400AA35F9 /* SectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D36B2B1805CCB400AA35F9 /* SectionViewController.m */; };
-		BF36ED44E78747338F3A16C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C307A8355B045618B95C62D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6C307A8355B045618B95C62D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		70143CB61802081400BEBE27 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
 		70143CB71802081400BEBE27 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		701B367417E4E260009EBE27 /* MELer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MELer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +74,6 @@
 		70A457DF17E5F1C700E4D5B0 /* Chapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapter.m; sourceTree = "<group>"; };
 		70D36B2A1805CCB400AA35F9 /* SectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
 		70D36B2B1805CCB400AA35F9 /* SectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
-		FA8C249323174A159636B220 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +85,6 @@
 				701B367E17E4E260009EBE27 /* CoreData.framework in Frameworks */,
 				701B367C17E4E260009EBE27 /* UIKit.framework in Frameworks */,
 				701B367817E4E260009EBE27 /* Foundation.framework in Frameworks */,
-				BF36ED44E78747338F3A16C8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +110,6 @@
 				701B36A517E4E260009EBE27 /* MELerTests */,
 				701B367617E4E260009EBE27 /* Frameworks */,
 				701B367517E4E260009EBE27 /* Products */,
-				FA8C249323174A159636B220 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +130,6 @@
 				701B367B17E4E260009EBE27 /* UIKit.framework */,
 				701B367D17E4E260009EBE27 /* CoreData.framework */,
 				701B369E17E4E260009EBE27 /* XCTest.framework */,
-				6C307A8355B045618B95C62D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,11 +202,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 701B36AF17E4E260009EBE27 /* Build configuration list for PBXNativeTarget "MELer" */;
 			buildPhases = (
-				0144B236F21B411FA0E44C81 /* Check Pods Manifest.lock */,
 				701B367017E4E260009EBE27 /* Sources */,
 				701B367117E4E260009EBE27 /* Frameworks */,
 				701B367217E4E260009EBE27 /* Resources */,
-				F2F3306606054F0FA0EA4AC9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,39 +288,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0144B236F21B411FA0E44C81 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F2F3306606054F0FA0EA4AC9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		701B367017E4E260009EBE27 /* Sources */ = {
@@ -466,7 +425,6 @@
 		};
 		701B36B017E4E260009EBE27 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA8C249323174A159636B220 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -480,7 +438,6 @@
 		};
 		701B36B117E4E260009EBE27 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA8C249323174A159636B220 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
