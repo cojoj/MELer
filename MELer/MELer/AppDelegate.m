@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Setting navigation bar color to be the same blue as the app icon
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:180.0f/255.0f green:223.0f/255.0f blue:246.0f/255.0f alpha:1]];
+    
     return YES;
 }
 							
