@@ -30,6 +30,8 @@
     // Setting titles
     [self.chapterTitleTextField setText:self.chapter.title];
     [self.sectionTitleTextField setText:[self.section.title capitalizedString]];
+    [self.numberTextField setText:[NSString stringWithFormat:@"%@-%@", self.chapter.number, self.section.number]];
+    
     // Setting details
     [self.detailTextView setText:[self displayProperDescriptionBasedOn:self.section.details]];
     [self.detailTextView sizeToFit];
