@@ -23,5 +23,5 @@ If you are a person from the description above you probably know what [MMEL](htt
 
 The idea of creating such application came from a [recruitment process](http://areusmart.pl/programista_aplikacji_mobilnych.php) for Internship. I've done this project with idea of getting some more experience in iOS development.
 
-**Crafted by**:
+**Crafted by**:  
 [@cojoj](https://twitter.com/cojoj)
